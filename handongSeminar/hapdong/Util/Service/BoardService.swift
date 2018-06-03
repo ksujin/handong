@@ -10,10 +10,6 @@ import Foundation
 import Alamofire
 import SwiftyJSON
 
-
-
-
-
 struct BoardService: GettableService {
     typealias NetworkData = StoreData
     static let shareInstance = BoardService()

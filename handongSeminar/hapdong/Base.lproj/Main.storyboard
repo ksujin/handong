@@ -606,7 +606,7 @@
         <!--북마크-->
         <scene sceneID="lUo-09-Z2d">
             <objects>
-                <tableViewController id="HOs-Z9-gmw" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="BookmarkTVC" id="HOs-Z9-gmw" customClass="BookmarkTVC" customModule="hapdong" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="I0T-oB-Cz0">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -686,6 +686,7 @@
                                 <connections>
                                     <outlet property="nameLabel" destination="tNr-pk-dt1" id="EIK-L6-fhS"/>
                                     <outlet property="ownerReplyCountLabel" destination="X0u-QO-Hdz" id="rZk-8Q-k5Z"/>
+                                    <outlet property="rankLabel" destination="ixh-xx-pR5" id="d6d-PS-UWL"/>
                                     <outlet property="reviewCountLabel" destination="qws-Kz-kOi" id="nCv-8W-0J2"/>
                                     <outlet property="simpleMenuLabel" destination="7di-P0-GOX" id="92l-zK-umG"/>
                                     <outlet property="storeImageView" destination="tOc-jV-9cm" id="3mT-rt-ghe"/>
