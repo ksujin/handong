@@ -1,0 +1,28 @@
+PODS:
+  - Alamofire (4.7.2)
+  - Kingfisher (4.7.0)
+  - PageMenu (2.0.0)
+  - SwiftyJSON (4.1.0)
+
+DEPENDENCIES:
+  - Alamofire
+  - Kingfisher
+  - PageMenu
+  - SwiftyJSON
+
+SPEC REPOS:
+  https://github.com/CocoaPods/Specs.git:
+    - Alamofire
+    - Kingfisher
+    - PageMenu
+    - SwiftyJSON
+
+SPEC CHECKSUMS:
+  Alamofire: e4fa87002c137ba2d8d634d2c51fabcda0d5c223
+  Kingfisher: da6b005aa96d37698e3e4f1ccfe96a5b9bbf27d6
+  PageMenu: 9c38fd7e0d9ef4b1408320f55bb907bbc0e538dc
+  SwiftyJSON: c29297daf073d2aa016295d5809cdd68045c39b3
+
+PODFILE CHECKSUM: 75dd2c83270ff23395b7a3c4e620715a03cbc399
+
+COCOAPODS: 1.5.0
