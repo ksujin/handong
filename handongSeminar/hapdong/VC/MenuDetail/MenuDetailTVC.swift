@@ -37,35 +37,6 @@ class MenuDetailTVC: UITableViewController, APIService {
         }
 
     }
-
-
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return stores.count
-    }
-
-    
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: MenuDetailCell.reuseIdentifier) as! MenuDetailCell
-       
-            cell.configure(store: stores[indexPath.row])
-            
-        
-        return cell
-        
-    }
-    
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
-        let StoreDetailVC = UIStoryboard(name: "Main", bundle : nil).instantiateViewController(withIdentifier: "StoreDetailVC") as! StoreDetailVC
-        
-        StoreDetailVC.selectedStore = stores[indexPath.row]
-        
-        self.navigationController?.pushViewController(StoreDetailVC, animated: true)
-        
-    }
-    
-    
     
     func storeBoardInit(url : String){
         BoardService.shareInstance.boardInit(url: url, completion: { [weak self] (result) in
@@ -89,6 +60,35 @@ class MenuDetailTVC: UITableViewController, APIService {
     
     
 
+}
+
+//tableView deleagte, datasource
+extension MenuDetailTVC {
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        // #warning Incomplete implementation, return the number of rows
+        return stores.count
+    }
+    
+    
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: MenuDetailCell.reuseIdentifier) as! MenuDetailCell
+        
+        cell.configure(store: stores[indexPath.row])
+        
+        
+        return cell
+        
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        let StoreDetailVC = UIStoryboard(name: "Main", bundle : nil).instantiateViewController(withIdentifier: "StoreDetailVC") as! StoreDetailVC
+        
+        StoreDetailVC.selectedStore = stores[indexPath.row]
+        
+        self.navigationController?.pushViewController(StoreDetailVC, animated: true)
+        
+    }
 }
 
 extension MenuDetailTVC {
