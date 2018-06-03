@@ -45,6 +45,7 @@
 		3B5E6AF220C1A04000DFD1FE /* StoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B5E6AF120C1A04000DFD1FE /* StoreData.swift */; };
 		3B5E6AF420C1BD9900DFD1FE /* LoginVO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B5E6AF320C1BD9900DFD1FE /* LoginVO.swift */; };
 		3B731F0420C453A2009085FA /* BookmarkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B731F0320C453A2009085FA /* BookmarkService.swift */; };
+		3B731F0920C4601A009085FA /* BookmarkTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B731F0820C4601A009085FA /* BookmarkTVC.swift */; };
 		3B7D8F8320C40ED6001AA464 /* RegisterReviewService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B7D8F8220C40ED6001AA464 /* RegisterReviewService.swift */; };
 		3B7D8F8520C4414F001AA464 /* Sub.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3B7D8F8420C4414F001AA464 /* Sub.storyboard */; };
 /* End PBXBuildFile section */
@@ -89,6 +90,7 @@
 		3B5E6AF120C1A04000DFD1FE /* StoreData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreData.swift; sourceTree = "<group>"; };
 		3B5E6AF320C1BD9900DFD1FE /* LoginVO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVO.swift; sourceTree = "<group>"; };
 		3B731F0320C453A2009085FA /* BookmarkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarkService.swift; sourceTree = "<group>"; };
+		3B731F0820C4601A009085FA /* BookmarkTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarkTVC.swift; sourceTree = "<group>"; };
 		3B7D8F8220C40ED6001AA464 /* RegisterReviewService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterReviewService.swift; sourceTree = "<group>"; };
 		3B7D8F8420C4414F001AA464 /* Sub.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Sub.storyboard; sourceTree = "<group>"; };
 		604BD9E6F66A9D11002A5E0C /* Pods_hapdong.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_hapdong.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -180,6 +182,7 @@
 		3B3A0D3A20B2B67000BA6D47 /* VC */ = {
 			isa = PBXGroup;
 			children = (
+				3B731F0720C45FF4009085FA /* BookmarkTVC */,
 				3B0F5CDA20C1ED4A00B017C9 /* ReviewRegister */,
 				3B5E6ADE20C18BE600DFD1FE /* SignIn */,
 				3B0F5CD120C1DDCA00B017C9 /* Join */,
@@ -318,6 +321,14 @@
 			path = Singleton;
 			sourceTree = "<group>";
 		};
+		3B731F0720C45FF4009085FA /* BookmarkTVC */ = {
+			isa = PBXGroup;
+			children = (
+				3B731F0820C4601A009085FA /* BookmarkTVC.swift */,
+			);
+			path = BookmarkTVC;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -453,6 +464,7 @@
 				3B0F5CD720C1E00C00B017C9 /* DefaultVO.swift in Sources */,
 				3B5E6AE020C18C0100DFD1FE /* SignInVC.swift in Sources */,
 				3B5E6AF420C1BD9900DFD1FE /* LoginVO.swift in Sources */,
+				3B731F0920C4601A009085FA /* BookmarkTVC.swift in Sources */,
 				3B5779AC20B3406C00120820 /* ThirdViewController.swift in Sources */,
 				3B0F5CD020C1D91700B017C9 /* enums.swift in Sources */,
 				3B2B940F20B29B6700C8C622 /* ViewController.swift in Sources */,

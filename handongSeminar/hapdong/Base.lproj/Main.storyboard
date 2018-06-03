@@ -612,7 +612,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="MenuDetailCell" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" rowHeight="128" id="FRb-vU-0r4">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="MenuDetailCell" rowHeight="128" id="FRb-vU-0r4" customClass="MenuDetailCell" customModule="hapdong" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="375" height="128"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="FRb-vU-0r4" id="aZe-3x-LYE">
@@ -683,6 +683,13 @@
                                         <constraint firstItem="ixh-xx-pR5" firstAttribute="centerY" secondItem="OZn-BW-KWO" secondAttribute="centerY" id="zSt-RM-xev"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="nameLabel" destination="tNr-pk-dt1" id="EIK-L6-fhS"/>
+                                    <outlet property="ownerReplyCountLabel" destination="X0u-QO-Hdz" id="rZk-8Q-k5Z"/>
+                                    <outlet property="reviewCountLabel" destination="qws-Kz-kOi" id="nCv-8W-0J2"/>
+                                    <outlet property="simpleMenuLabel" destination="7di-P0-GOX" id="92l-zK-umG"/>
+                                    <outlet property="storeImageView" destination="tOc-jV-9cm" id="3mT-rt-ghe"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>

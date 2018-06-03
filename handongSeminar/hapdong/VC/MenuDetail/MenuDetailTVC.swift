@@ -8,8 +8,9 @@
 
 import UIKit
 
-class MenuDetailTVC: UITableViewController {
+class MenuDetailTVC: UITableViewController, APIService {
     
+    var selectedCategory : Int = 0 
     var stores : [Store] = []
 
     override func viewDidLoad() {
@@ -17,6 +18,23 @@ class MenuDetailTVC: UITableViewController {
         self.tableView.tableFooterView = UIView(frame: .zero)
         
         addRightBarButton(image: #imageLiteral(resourceName: "add"), selector: #selector(self.goToAddStoreView))
+        
+        switch selectedCategory {
+        case 101 :
+             self.navigationItem.title = "한식"
+            storeBoardInit(url: url("/store/list/101"))
+        case 102 :
+            self.navigationItem.title = "치킨"
+            storeBoardInit(url: url("/store/list/102"))
+        case 103 :
+            self.navigationItem.title = "피자"
+            storeBoardInit(url: url("/store/list/103"))
+        case 104 :
+            self.navigationItem.title = "야식"
+            storeBoardInit(url: url("/store/list/104"))
+        default :
+            print("no category")
+        }
 
     }
 
@@ -46,6 +64,29 @@ class MenuDetailTVC: UITableViewController {
         self.navigationController?.pushViewController(StoreDetailVC, animated: true)
         
     }
+    
+    
+    
+    func storeBoardInit(url : String){
+        BoardService.shareInstance.boardInit(url: url, completion: { [weak self] (result) in
+            guard let `self` = self else { return }
+            
+            switch result {
+            case .networkSuccess(let storeData):
+                self.stores = storeData
+                self.tableView.reloadData()
+                break
+                
+            case .networkFail :
+                self.simpleAlert(title: "network", message: "check")
+            default :
+                break
+            }
+            
+        })
+        
+    }
+    
     
 
 }
