@@ -15,7 +15,6 @@
 		3B0F5CD920C1E54F00B017C9 /* PostablewithPhoto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B0F5CD820C1E54F00B017C9 /* PostablewithPhoto.swift */; };
 		3B0F5CDC20C1ED6500B017C9 /* RegisterReviewVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B0F5CDB20C1ED6500B017C9 /* RegisterReviewVC.swift */; };
 		3B2B940D20B29B6700C8C622 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B2B940C20B29B6700C8C622 /* AppDelegate.swift */; };
-		3B2B940F20B29B6700C8C622 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B2B940E20B29B6700C8C622 /* ViewController.swift */; };
 		3B2B941220B29B6700C8C622 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3B2B941020B29B6700C8C622 /* Main.storyboard */; };
 		3B2B941420B29B6700C8C622 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3B2B941320B29B6700C8C622 /* Assets.xcassets */; };
 		3B2B941720B29B6700C8C622 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3B2B941520B29B6700C8C622 /* LaunchScreen.storyboard */; };
@@ -59,7 +58,6 @@
 		3B0F5CDB20C1ED6500B017C9 /* RegisterReviewVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterReviewVC.swift; sourceTree = "<group>"; };
 		3B2B940920B29B6600C8C622 /* hapdong.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = hapdong.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3B2B940C20B29B6700C8C622 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		3B2B940E20B29B6700C8C622 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		3B2B941120B29B6700C8C622 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		3B2B941320B29B6700C8C622 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3B2B941620B29B6700C8C622 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -165,16 +163,12 @@
 			isa = PBXGroup;
 			children = (
 				3B2B940C20B29B6700C8C622 /* AppDelegate.swift */,
-				3B2B941020B29B6700C8C622 /* Main.storyboard */,
-				3B7D8F8420C4414F001AA464 /* Sub.storyboard */,
-				3B2B940E20B29B6700C8C622 /* ViewController.swift */,
 				3B2B942220B2A6CA00C8C622 /* SegementedVC.swift */,
+				3BA3535120C46D8B009DC9FD /* Storyboard */,
 				3B3A0D3A20B2B67000BA6D47 /* VC */,
 				3B5E6AE120C18CDF00DFD1FE /* Util */,
 				3B2B941320B29B6700C8C622 /* Assets.xcassets */,
-				3B2B941520B29B6700C8C622 /* LaunchScreen.storyboard */,
 				3B2B941820B29B6700C8C622 /* Info.plist */,
-				3B3A0D4220B2BD3000BA6D47 /* Extensions.swift */,
 			);
 			path = hapdong;
 			sourceTree = "<group>";
@@ -329,12 +323,23 @@
 		3BA3534F20C46C06009DC9FD /* Utility */ = {
 			isa = PBXGroup;
 			children = (
+				3B3A0D4220B2BD3000BA6D47 /* Extensions.swift */,
 				3B5E6AE320C18D2900DFD1FE /* APIService.swift */,
 				3B5E6AEB20C1972400DFD1FE /* GettableService.swift */,
 				3B5E6AED20C1973400DFD1FE /* PostableService.swift */,
 				3B0F5CD820C1E54F00B017C9 /* PostablewithPhoto.swift */,
 			);
 			path = Utility;
+			sourceTree = "<group>";
+		};
+		3BA3535120C46D8B009DC9FD /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				3B2B941020B29B6700C8C622 /* Main.storyboard */,
+				3B7D8F8420C4414F001AA464 /* Sub.storyboard */,
+				3B2B941520B29B6700C8C622 /* LaunchScreen.storyboard */,
+			);
+			path = Storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -475,7 +480,6 @@
 				3B731F0920C4601A009085FA /* BookmarkTVC.swift in Sources */,
 				3B5779AC20B3406C00120820 /* ThirdViewController.swift in Sources */,
 				3B0F5CD020C1D91700B017C9 /* enums.swift in Sources */,
-				3B2B940F20B29B6700C8C622 /* ViewController.swift in Sources */,
 				3B2B942320B2A6CA00C8C622 /* SegementedVC.swift in Sources */,
 				3B0F5CD920C1E54F00B017C9 /* PostablewithPhoto.swift in Sources */,
 				3B5779B520B34D8500120820 /* ReviewVO.swift in Sources */,
