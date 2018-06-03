@@ -9,39 +9,74 @@
 import UIKit
 
 
-class StoreDetailVC: UIViewController {
+class StoreDetailVC: UIViewController, APIService {
     
-
-     @IBOutlet weak var containerView    : UIView!
+    var like : UIBarButtonItem = UIBarButtonItem()
+    var likeEmpty : UIBarButtonItem = UIBarButtonItem()
+    
+    @IBOutlet weak var containerView    : UIView!
     var selectedStore:Store!
-    var isMarked = 0
-   // let cellId = "cellId"
+    //원래 selectedStore.isMarked 받아와야함
+    var isMarked : Bool = true {
+        didSet {
+          navigationItem.rightBarButtonItems = self.isMarked ? [like] : [likeEmpty]
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationItem.title = selectedStore.storeName
-        //if 북마크 되어있으면 이미지 바뀌어야 함
-        if isMarked == 0 {
-            addRightBarButton(image: #imageLiteral(resourceName: "heartEmpty"), selector: #selector(self.checkBookmark))
-        } else {
-            addRightBarButton(image: #imageLiteral(resourceName: "heart"), selector: #selector(self.checkBookmark))
-        }
-     
+        
+        like = UIBarButtonItem.itemWith(colorfulImage: #imageLiteral(resourceName: "heart"), target: self, action: #selector(sample))
+        likeEmpty = UIBarButtonItem.itemWith(colorfulImage: #imageLiteral(resourceName: "heartEmpty"), target: self, action: #selector(sample))
+
+        navigationItem.rightBarButtonItems = self.isMarked ? [like] : [likeEmpty]
+        
         self.navigationController?.navigationBar.shadowImage = UIImage()
         setupMenuBar()
         setupView()
-    
+        
     }
     
- 
+    @objc func sample(){
+        self.isMarked = (self.isMarked) ? false : true
+      
+    }
+    
+    @objc func checkBookmark(){
+        
+        let params : [String : Any] = [
+            "store_idx" : selectedStore.storeIdx,
+            "user_id" : UserDefaults.standard.string(forKey: "userId")!
+        ]
+        
+        BookmarkService.shareInstance.checkBookmark(URL: url("/bookmark/like"), params: params) { [weak self] (result) in
+            guard let `self` = self else { return }
+            switch result {
+            case .networkSuccess(_):
+                self.isMarked = (self.isMarked) ? false : true
+            case .serverErr :
+                self.simpleAlert(title: "오류", message: "서버에러")
+            case .networkFail :
+                self.simpleAlert(title: "오류", message: "인터넷 연결상태를 확인해주세요")
+            default :
+                break
+            }
+            
+        }
+        
+    }
+    
+    
+    
     
     func scrollToMenuIndex(menuIndex: Int) {
-
         updateView(selected: menuIndex)
         
     }
     
     
-   lazy var menuBar: MenuBar = {
+    lazy var menuBar: MenuBar = {
         let mb = MenuBar()
         mb.homeController = self
         return mb
@@ -50,30 +85,24 @@ class StoreDetailVC: UIViewController {
     
     private func setupMenuBar() {
         
-        
         //메뉴바 삽입
         view.addSubview(menuBar)
-
+        
         menuBar.translatesAutoresizingMaskIntoConstraints = false
         menuBar.widthAnchor.constraint(equalToConstant: self.view.frame.width).isActive = true
         menuBar.heightAnchor.constraint(equalToConstant: 50).isActive = true
         menuBar.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         menuBar.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor).isActive = true
         
-      
         
         
-    }
-
-    @objc func checkBookmark(){
-        //네트워크
-        //didSet 통해서 isMarked 가 바뀔 때 마다 heart 이미지도 바뀌도록
-
+        
     }
     
- 
-  
-  
+    
+    
+    
+    
     //----------------------------------------------------------------
     // MARK:-
     // MARK:- Variables
@@ -85,7 +114,7 @@ class StoreDetailVC: UIViewController {
         
         // Instantiate View Controller
         var viewController = storyboard.instantiateViewController(withIdentifier: "FirstViewController") as! FirstViewController
-       /// viewController.menues = selectedStore.storeMenu
+        /// viewController.menues = selectedStore.storeMenu
         // Add View Controller as Child View Controller
         self.add(asChildViewController: viewController)
         
@@ -111,7 +140,7 @@ class StoreDetailVC: UIViewController {
         
         // Instantiate View Controller
         var viewController = storyboard.instantiateViewController(withIdentifier: "ThirdViewController") as! ThirdViewController
-       // viewController.reviews = selectedStore.reviews
+        // viewController.reviews = selectedStore.reviews
         // Add View Controller as Child View Controller
         self.add(asChildViewController: viewController)
         
@@ -128,7 +157,7 @@ class StoreDetailVC: UIViewController {
         return UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "StoreDetailVC") as! StoreDetailVC
     }
     
-  
+    
     
     
     //----------------------------------------------------------------
@@ -191,8 +220,8 @@ class StoreDetailVC: UIViewController {
         updateView(selected: 0)
     }
     
-   
-   
+    
+    
 }
 
 

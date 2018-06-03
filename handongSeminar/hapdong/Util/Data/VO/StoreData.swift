@@ -9,7 +9,6 @@
 import Foundation
 
 struct StoreData: Codable {
-    
     let status : Bool
     let message: String
     let result : [Store]

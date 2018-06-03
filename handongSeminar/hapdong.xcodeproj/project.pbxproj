@@ -44,6 +44,7 @@
 		3B5E6AF020C19C1800DFD1FE /* BoardService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B5E6AEF20C19C1800DFD1FE /* BoardService.swift */; };
 		3B5E6AF220C1A04000DFD1FE /* StoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B5E6AF120C1A04000DFD1FE /* StoreData.swift */; };
 		3B5E6AF420C1BD9900DFD1FE /* LoginVO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B5E6AF320C1BD9900DFD1FE /* LoginVO.swift */; };
+		3B731F0420C453A2009085FA /* BookmarkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B731F0320C453A2009085FA /* BookmarkService.swift */; };
 		3B7D8F8320C40ED6001AA464 /* RegisterReviewService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B7D8F8220C40ED6001AA464 /* RegisterReviewService.swift */; };
 		3B7D8F8520C4414F001AA464 /* Sub.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3B7D8F8420C4414F001AA464 /* Sub.storyboard */; };
 /* End PBXBuildFile section */
@@ -87,6 +88,7 @@
 		3B5E6AEF20C19C1800DFD1FE /* BoardService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardService.swift; sourceTree = "<group>"; };
 		3B5E6AF120C1A04000DFD1FE /* StoreData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreData.swift; sourceTree = "<group>"; };
 		3B5E6AF320C1BD9900DFD1FE /* LoginVO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVO.swift; sourceTree = "<group>"; };
+		3B731F0320C453A2009085FA /* BookmarkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarkService.swift; sourceTree = "<group>"; };
 		3B7D8F8220C40ED6001AA464 /* RegisterReviewService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterReviewService.swift; sourceTree = "<group>"; };
 		3B7D8F8420C4414F001AA464 /* Sub.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Sub.storyboard; sourceTree = "<group>"; };
 		604BD9E6F66A9D11002A5E0C /* Pods_hapdong.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_hapdong.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -293,6 +295,7 @@
 				3B5E6AEF20C19C1800DFD1FE /* BoardService.swift */,
 				3B0F5CD420C1DFD800B017C9 /* JoinService.swift */,
 				3B7D8F8220C40ED6001AA464 /* RegisterReviewService.swift */,
+				3B731F0320C453A2009085FA /* BookmarkService.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -466,6 +469,7 @@
 				3B3A0D4120B2B9F300BA6D47 /* MenuDetailCell.swift in Sources */,
 				3B0F5CD520C1DFD800B017C9 /* JoinService.swift in Sources */,
 				3B5779A820B2E46400120820 /* MenuBar.swift in Sources */,
+				3B731F0420C453A2009085FA /* BookmarkService.swift in Sources */,
 				3B5E6AEC20C1972400DFD1FE /* GettableService.swift in Sources */,
 				3B5779B120B3459900120820 /* FirstTableViewCell.swift in Sources */,
 				3B3A0D4820B2C0B300BA6D47 /* RegisterStoreVC.swift in Sources */,
