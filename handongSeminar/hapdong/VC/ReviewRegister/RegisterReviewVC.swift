@@ -41,7 +41,7 @@ class RegisterReviewVC: UIViewController, Gallery, APIService {
             switch result {
             case .networkSuccess(_):
                 self.simpleAlertwithHandler(title: "성공", message: "등록성공", okHandler: { (_) in
-                    self.tabBarController?.tabBar.isHidden = false
+                    
                     self.navigationController?.popViewController(animated: false)
 
                 })

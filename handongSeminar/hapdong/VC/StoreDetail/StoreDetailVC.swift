@@ -24,6 +24,7 @@ class StoreDetailVC: UIViewController, APIService {
     }
     
     override func viewWillAppear(_ animated: Bool) {
+    self.tabBarController?.tabBar.isHidden = false
        navigationItem.rightBarButtonItems = self.isMarked ? [like] : [likeEmpty]
     }
     
