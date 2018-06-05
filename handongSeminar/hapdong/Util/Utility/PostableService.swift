@@ -10,11 +10,14 @@
 
 import Foundation
 import Alamofire
+import SwiftyJSON
 
 
 protocol PostableService {
     associatedtype NetworkData : Codable
     func post(_ URL:String, params : [String : Any], completion : @escaping (Result<NetworkData>)->Void)
+    
+    func delete(_ URL:String, params : [String : Any], completion : @escaping (Result<NetworkData>)->Void)
 }
 
 extension PostableService {
@@ -30,7 +33,7 @@ extension PostableService {
             res in
             switch res.result {
             case .success:
-                
+              
                 if let value = res.result.value {
                     
                     let decoder = JSONDecoder()
@@ -40,6 +43,7 @@ extension PostableService {
                         completion(.success(data))
                        
                     }catch{
+                       
                         completion(.error("error"))
                     }
                 }
@@ -51,5 +55,36 @@ extension PostableService {
         }
         
        
+    }
+    
+    
+    func delete(_ URL:String, params : [String : Any], completion : @escaping (Result<NetworkData>)->Void){
+        
+        Alamofire.request(URL, method: .delete, parameters: params, encoding: JSONEncoding.default, headers: nil).responseData(){
+            res in
+            switch res.result {
+            case .success:
+                
+                if let value = res.result.value {
+                    
+                    let decoder = JSONDecoder()
+                    
+                    do {
+                        let data = try decoder.decode(NetworkData.self, from: value)
+                        completion(.success(data))
+                        
+                    }catch{
+                        
+                        completion(.error("error"))
+                    }
+                }
+                break
+            case .failure(let err):
+                completion(.failure(err))
+                break
+            }
+        }
+        
+        
     }
 }

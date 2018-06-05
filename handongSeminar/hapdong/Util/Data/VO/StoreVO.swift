@@ -15,6 +15,7 @@ struct Store: Codable {
     let storePhoto : String?
     let storeContent: String?
     let userIdx : Int
+    let bookmarkCheck : Bool
     
     enum CodingKeys: String, CodingKey {
         case storeIdx = "store_idx"
@@ -23,6 +24,7 @@ struct Store: Codable {
         case storePhoto = "store_photo"
         case storeContent = "store_content"
         case userIdx = "user_idx"
+        case bookmarkCheck = "bookmarkCheck"
     }
 }
 

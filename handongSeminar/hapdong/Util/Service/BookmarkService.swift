@@ -34,4 +34,27 @@ struct BookmarkService : PostableService {
         }
     }
     
+    func deleteBookmark(URL : String, params : [String : Any], completion : @escaping (NetworkResult<Any>) -> Void){
+        delete(URL, params: params) { (result) in
+            switch result {
+            case .success(let networkResult):
+                switch networkResult.message {
+                case "success" :
+                    completion(.networkSuccess(""))
+                case "500/400 error" :
+                    completion(.serverErr)
+                default :
+                    break
+                }
+                
+                break
+            case .error(let errMsg) :
+                print(errMsg)
+                break
+            case .failure(_) :
+                completion(.networkFail)
+            }
+        }
+    }
+    
 }

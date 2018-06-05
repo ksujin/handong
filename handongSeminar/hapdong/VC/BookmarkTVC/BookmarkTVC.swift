@@ -23,7 +23,11 @@ class BookmarkTVC: UITableViewController, APIService {
     
     //TODO - bookmark get 할때랑 메시지 같게 달라고 하기
     func storeBoardInit(url : String){
-        BoardService.shareInstance.boardInit(url: url, completion: { [weak self] (result) in
+        let params : [String : Any] = [ :
+        
+        ]
+        
+        BoardService.shareInstance.boardInit(url: url, params : params, completion: { [weak self] (result) in
             guard let `self` = self else { return }
             
             switch result {

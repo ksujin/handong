@@ -24,11 +24,15 @@ class StoreDetailVC: UIViewController, APIService {
     }
     
     override func viewDidLoad() {
+   
         super.viewDidLoad()
+
         self.navigationItem.title = selectedStore.storeName
         
-        like = UIBarButtonItem.itemWith(colorfulImage: #imageLiteral(resourceName: "heart"), target: self, action: #selector(sample))
-        likeEmpty = UIBarButtonItem.itemWith(colorfulImage: #imageLiteral(resourceName: "heartEmpty"), target: self, action: #selector(sample))
+        isMarked = self.selectedStore.bookmarkCheck
+        
+        like = UIBarButtonItem.itemWith(colorfulImage: #imageLiteral(resourceName: "heart"), target: self, action: #selector(deleteBookmark))
+        likeEmpty = UIBarButtonItem.itemWith(colorfulImage: #imageLiteral(resourceName: "heartEmpty"), target: self, action: #selector(checkBookmark))
 
         navigationItem.rightBarButtonItems = self.isMarked ? [like] : [likeEmpty]
         
@@ -40,7 +44,29 @@ class StoreDetailVC: UIViewController, APIService {
     
     @objc func sample(){
         self.isMarked = (self.isMarked) ? false : true
-      
+    }
+    
+    @objc func deleteBookmark(){
+        
+        let params : [String : Any] = [
+            "store_idx" : selectedStore.storeIdx,
+            "user_id" : UserDefaults.standard.string(forKey: "userId")!
+        ]
+        
+        BookmarkService.shareInstance.deleteBookmark(URL: url("/bookmark/like"), params: params) { [weak self] (result) in
+            guard let `self` = self else { return }
+            switch result {
+            case .networkSuccess(_):
+                self.isMarked = false
+            case .serverErr :
+                self.simpleAlert(title: "오류", message: "서버에러")
+            case .networkFail :
+                self.simpleAlert(title: "오류", message: "인터넷 연결상태를 확인해주세요")
+            default :
+                break
+            }
+        }
+        
     }
     
     @objc func checkBookmark(){
@@ -54,7 +80,7 @@ class StoreDetailVC: UIViewController, APIService {
             guard let `self` = self else { return }
             switch result {
             case .networkSuccess(_):
-                self.isMarked = (self.isMarked) ? false : true
+                self.isMarked = true
             case .serverErr :
                 self.simpleAlert(title: "오류", message: "서버에러")
             case .networkFail :

@@ -16,30 +16,34 @@ class MenuDetailTVC: UITableViewController, APIService {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.tableView.tableFooterView = UIView(frame: .zero)
-        
+        print("aaa")
         addRightBarButton(image: #imageLiteral(resourceName: "add"), selector: #selector(self.goToAddStoreView))
         
         switch selectedCategory {
         case 101 :
              self.navigationItem.title = "한식"
-            storeBoardInit(url: url("/store/list/101"))
         case 102 :
             self.navigationItem.title = "치킨"
-            storeBoardInit(url: url("/store/list/102"))
         case 103 :
             self.navigationItem.title = "피자"
-            storeBoardInit(url: url("/store/list/103"))
         case 104 :
             self.navigationItem.title = "야식"
-            storeBoardInit(url: url("/store/list/104"))
         default :
             print("no category")
         }
+        
+        self.storeBoardInit(url : url("/store/list"))
 
     }
     
     func storeBoardInit(url : String){
-        BoardService.shareInstance.boardInit(url: url, completion: { [weak self] (result) in
+        
+        let params : [String : Any] = [
+            "user_id" : UserDefaults.standard.string(forKey: "userId")!,
+            "category" : String(selectedCategory)
+        ]
+        
+        BoardService.shareInstance.boardInit(url: url, params : params, completion: { [weak self] (result) in
             guard let `self` = self else { return }
             
             switch result {
@@ -85,7 +89,7 @@ extension MenuDetailTVC {
         let StoreDetailVC = UIStoryboard(name: "Main", bundle : nil).instantiateViewController(withIdentifier: "StoreDetailVC") as! StoreDetailVC
         
         StoreDetailVC.selectedStore = stores[indexPath.row]
-        
+
         self.navigationController?.pushViewController(StoreDetailVC, animated: true)
         
     }
@@ -95,6 +99,7 @@ extension MenuDetailTVC {
     
     @objc func goToAddStoreView(){
         if let RegisterStoreVC = UIStoryboard(name: "Sub", bundle : nil).instantiateViewController(withIdentifier:"RegisterStoreVC") as? RegisterStoreVC {
+            
             self.navigationController?.pushViewController(RegisterStoreVC, animated: true)
         }
     }
