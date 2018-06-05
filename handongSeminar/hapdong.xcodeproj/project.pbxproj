@@ -27,7 +27,6 @@
 		3B3A0D3F20B2B6B500BA6D47 /* MenuVO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B3A0D3E20B2B6B500BA6D47 /* MenuVO.swift */; };
 		3B3A0D4120B2B9F300BA6D47 /* MenuDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B3A0D4020B2B9F300BA6D47 /* MenuDetailCell.swift */; };
 		3B3A0D4320B2BD3000BA6D47 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B3A0D4220B2BD3000BA6D47 /* Extensions.swift */; };
-		3B3A0D4820B2C0B300BA6D47 /* RegisterStoreVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B3A0D4720B2C0B300BA6D47 /* RegisterStoreVC.swift */; };
 		3B5779A220B2D41000120820 /* StoreDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B5779A120B2D41000120820 /* StoreDetailVC.swift */; };
 		3B5779A820B2E46400120820 /* MenuBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B5779A720B2E46400120820 /* MenuBar.swift */; };
 		3B5779AC20B3406C00120820 /* ThirdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B5779AB20B3406C00120820 /* ThirdViewController.swift */; };
@@ -47,6 +46,11 @@
 		3B731F0920C4601A009085FA /* BookmarkTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B731F0820C4601A009085FA /* BookmarkTVC.swift */; };
 		3B7D8F8320C40ED6001AA464 /* RegisterReviewService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B7D8F8220C40ED6001AA464 /* RegisterReviewService.swift */; };
 		3B7D8F8520C4414F001AA464 /* Sub.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3B7D8F8420C4414F001AA464 /* Sub.storyboard */; };
+		3B9DB66F20C749EC006504D7 /* RegisterStoreTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B9DB66E20C749EC006504D7 /* RegisterStoreTVC.swift */; };
+		3B9DB67120C74A0A006504D7 /* RegisterStoreCell1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B9DB67020C74A0A006504D7 /* RegisterStoreCell1.swift */; };
+		3B9DB67320C74A15006504D7 /* RegisterStoreCell2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B9DB67220C74A15006504D7 /* RegisterStoreCell2.swift */; };
+		3B9DB67520C74A1F006504D7 /* RegisterStoreCell3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B9DB67420C74A1F006504D7 /* RegisterStoreCell3.swift */; };
+		3B9DB67720C74B5E006504D7 /* RegisterStoreService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B9DB67620C74B5E006504D7 /* RegisterStoreService.swift */; };
 		3BB0F16620C526E00000EA18 /* Sample.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BB0F16520C526E00000EA18 /* Sample.swift */; };
 		3BB2AFF020C6B41A00B9E676 /* BookmarkBoardService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BB2AFEF20C6B41A00B9E676 /* BookmarkBoardService.swift */; };
 /* End PBXBuildFile section */
@@ -73,7 +77,6 @@
 		3B3A0D3E20B2B6B500BA6D47 /* MenuVO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuVO.swift; sourceTree = "<group>"; };
 		3B3A0D4020B2B9F300BA6D47 /* MenuDetailCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuDetailCell.swift; sourceTree = "<group>"; };
 		3B3A0D4220B2BD3000BA6D47 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
-		3B3A0D4720B2C0B300BA6D47 /* RegisterStoreVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterStoreVC.swift; sourceTree = "<group>"; };
 		3B5779A120B2D41000120820 /* StoreDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreDetailVC.swift; sourceTree = "<group>"; };
 		3B5779A720B2E46400120820 /* MenuBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuBar.swift; sourceTree = "<group>"; };
 		3B5779AB20B3406C00120820 /* ThirdViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdViewController.swift; sourceTree = "<group>"; };
@@ -93,6 +96,11 @@
 		3B731F0820C4601A009085FA /* BookmarkTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarkTVC.swift; sourceTree = "<group>"; };
 		3B7D8F8220C40ED6001AA464 /* RegisterReviewService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterReviewService.swift; sourceTree = "<group>"; };
 		3B7D8F8420C4414F001AA464 /* Sub.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Sub.storyboard; sourceTree = "<group>"; };
+		3B9DB66E20C749EC006504D7 /* RegisterStoreTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterStoreTVC.swift; sourceTree = "<group>"; };
+		3B9DB67020C74A0A006504D7 /* RegisterStoreCell1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterStoreCell1.swift; sourceTree = "<group>"; };
+		3B9DB67220C74A15006504D7 /* RegisterStoreCell2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterStoreCell2.swift; sourceTree = "<group>"; };
+		3B9DB67420C74A1F006504D7 /* RegisterStoreCell3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterStoreCell3.swift; sourceTree = "<group>"; };
+		3B9DB67620C74B5E006504D7 /* RegisterStoreService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterStoreService.swift; sourceTree = "<group>"; };
 		3BB0F16520C526E00000EA18 /* Sample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sample.swift; sourceTree = "<group>"; };
 		3BB2AFEF20C6B41A00B9E676 /* BookmarkBoardService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarkBoardService.swift; sourceTree = "<group>"; };
 		604BD9E6F66A9D11002A5E0C /* Pods_hapdong.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_hapdong.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -226,7 +234,10 @@
 		3B3A0D4620B2C09E00BA6D47 /* RegisterStore */ = {
 			isa = PBXGroup;
 			children = (
-				3B3A0D4720B2C0B300BA6D47 /* RegisterStoreVC.swift */,
+				3B9DB66E20C749EC006504D7 /* RegisterStoreTVC.swift */,
+				3B9DB67020C74A0A006504D7 /* RegisterStoreCell1.swift */,
+				3B9DB67220C74A15006504D7 /* RegisterStoreCell2.swift */,
+				3B9DB67420C74A1F006504D7 /* RegisterStoreCell3.swift */,
 			);
 			path = RegisterStore;
 			sourceTree = "<group>";
@@ -296,6 +307,7 @@
 				3B7D8F8220C40ED6001AA464 /* RegisterReviewService.swift */,
 				3B731F0320C453A2009085FA /* BookmarkService.swift */,
 				3BB2AFEF20C6B41A00B9E676 /* BookmarkBoardService.swift */,
+				3B9DB67620C74B5E006504D7 /* RegisterStoreService.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -469,22 +481,27 @@
 			buildActionMask = 2147483647;
 			files = (
 				3B2B942720B2A6EA00C8C622 /* SecondViewController.swift in Sources */,
+				3B9DB67320C74A15006504D7 /* RegisterStoreCell2.swift in Sources */,
 				3BB0F16620C526E00000EA18 /* Sample.swift in Sources */,
 				3B3A0D3920B2B51900BA6D47 /* MenuDetailTVC.swift in Sources */,
 				3B3A0D3D20B2B6AD00BA6D47 /* StoreVO.swift in Sources */,
 				3B5E6AF220C1A04000DFD1FE /* StoreData.swift in Sources */,
 				3B5E6AEE20C1973400DFD1FE /* PostableService.swift in Sources */,
 				3B5E6AF020C19C1800DFD1FE /* BoardService.swift in Sources */,
+				3B9DB67520C74A1F006504D7 /* RegisterStoreCell3.swift in Sources */,
 				3B7D8F8320C40ED6001AA464 /* RegisterReviewService.swift in Sources */,
 				3B3A0D3720B2B4FD00BA6D47 /* MainVC.swift in Sources */,
 				3B2B942520B2A6E300C8C622 /* FirstViewController.swift in Sources */,
 				3B5779A220B2D41000120820 /* StoreDetailVC.swift in Sources */,
+				3B9DB66F20C749EC006504D7 /* RegisterStoreTVC.swift in Sources */,
 				3B5E6AE420C18D2900DFD1FE /* APIService.swift in Sources */,
 				3B3A0D3F20B2B6B500BA6D47 /* MenuVO.swift in Sources */,
 				3BB2AFF020C6B41A00B9E676 /* BookmarkBoardService.swift in Sources */,
 				3B0F5CD720C1E00C00B017C9 /* DefaultVO.swift in Sources */,
 				3B5E6AE020C18C0100DFD1FE /* SignInVC.swift in Sources */,
+				3B9DB67720C74B5E006504D7 /* RegisterStoreService.swift in Sources */,
 				3B5E6AF420C1BD9900DFD1FE /* LoginVO.swift in Sources */,
+				3B9DB67120C74A0A006504D7 /* RegisterStoreCell1.swift in Sources */,
 				3B731F0920C4601A009085FA /* BookmarkTVC.swift in Sources */,
 				3B5779AC20B3406C00120820 /* ThirdViewController.swift in Sources */,
 				3B0F5CD020C1D91700B017C9 /* enums.swift in Sources */,
@@ -504,7 +521,6 @@
 				3B731F0420C453A2009085FA /* BookmarkService.swift in Sources */,
 				3B5E6AEC20C1972400DFD1FE /* GettableService.swift in Sources */,
 				3B5779B120B3459900120820 /* FirstTableViewCell.swift in Sources */,
-				3B3A0D4820B2C0B300BA6D47 /* RegisterStoreVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

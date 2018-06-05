@@ -102,7 +102,7 @@ extension MenuDetailTVC {
 extension MenuDetailTVC {
     
     @objc func goToAddStoreView(){
-        if let RegisterStoreVC = UIStoryboard(name: "Sub", bundle : nil).instantiateViewController(withIdentifier:"RegisterStoreVC") as? RegisterStoreVC {
+        if let RegisterStoreVC = UIStoryboard(name: "Main", bundle : nil).instantiateViewController(withIdentifier:"RegisterStoreTVC") as? RegisterStoreTVC {
             
             self.navigationController?.pushViewController(RegisterStoreVC, animated: true)
         }
