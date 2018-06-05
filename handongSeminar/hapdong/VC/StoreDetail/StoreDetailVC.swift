@@ -16,11 +16,15 @@ class StoreDetailVC: UIViewController, APIService {
     
     @IBOutlet weak var containerView    : UIView!
     var selectedStore:Store!
-    //원래 selectedStore.isMarked 받아와야함
+    
     var isMarked : Bool = true {
         didSet {
           navigationItem.rightBarButtonItems = self.isMarked ? [like] : [likeEmpty]
         }
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+       navigationItem.rightBarButtonItems = self.isMarked ? [like] : [likeEmpty]
     }
     
     override func viewDidLoad() {
@@ -30,6 +34,7 @@ class StoreDetailVC: UIViewController, APIService {
         self.navigationItem.title = selectedStore.storeName
         
         isMarked = self.selectedStore.bookmarkCheck
+        print(isMarked)
         
         like = UIBarButtonItem.itemWith(colorfulImage: #imageLiteral(resourceName: "heart"), target: self, action: #selector(deleteBookmark))
         likeEmpty = UIBarButtonItem.itemWith(colorfulImage: #imageLiteral(resourceName: "heartEmpty"), target: self, action: #selector(checkBookmark))
@@ -58,6 +63,7 @@ class StoreDetailVC: UIViewController, APIService {
             switch result {
             case .networkSuccess(_):
                 self.isMarked = false
+                print("북마크 해제")
             case .serverErr :
                 self.simpleAlert(title: "오류", message: "서버에러")
             case .networkFail :
@@ -81,6 +87,7 @@ class StoreDetailVC: UIViewController, APIService {
             switch result {
             case .networkSuccess(_):
                 self.isMarked = true
+                print("북마크 체크")
             case .serverErr :
                 self.simpleAlert(title: "오류", message: "서버에러")
             case .networkFail :

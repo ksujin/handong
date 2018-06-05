@@ -16,9 +16,11 @@ struct BookmarkService : PostableService {
             switch result {
             case .success(let networkResult):
                 switch networkResult.message {
-                case "success" :
+                case "Success" :
                     completion(.networkSuccess(""))
-                case "500/400 error" :
+                case "Already Bookmark":
+                    completion(.duplicated)
+                case "Internal Server Error!" :
                     completion(.serverErr)
                 default :
                     break
@@ -39,9 +41,9 @@ struct BookmarkService : PostableService {
             switch result {
             case .success(let networkResult):
                 switch networkResult.message {
-                case "success" :
+                case "Success" :
                     completion(.networkSuccess(""))
-                case "500/400 error" :
+                case "Internal Server Error!" :
                     completion(.serverErr)
                 default :
                     break

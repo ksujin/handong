@@ -12,6 +12,11 @@ class BookmarkTVC: UITableViewController, APIService {
     
     var stores : [Store] = []
     
+    override func viewWillAppear(_ animated: Bool) {
+        let userId = UserDefaults.standard.string(forKey: "userId")!
+        storeBoardInit(url : url("/bookmark/list/\(userId)"))
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.tableView.tableFooterView = UIView(frame: .zero)
@@ -23,11 +28,9 @@ class BookmarkTVC: UITableViewController, APIService {
     
     //TODO - bookmark get 할때랑 메시지 같게 달라고 하기
     func storeBoardInit(url : String){
-        let params : [String : Any] = [ :
+       
         
-        ]
-        
-        BoardService.shareInstance.boardInit(url: url, params : params, completion: { [weak self] (result) in
+        BookmarkBoardService.shareInstance.boardInit(url: url, completion: { [weak self] (result) in
             guard let `self` = self else { return }
             
             switch result {

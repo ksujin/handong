@@ -36,6 +36,11 @@ class MenuDetailTVC: UITableViewController, APIService {
 
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        self.storeBoardInit(url:  url("/store/list"))
+        
+    }
+    
     func storeBoardInit(url : String){
         
         let params : [String : Any] = [
@@ -89,7 +94,6 @@ extension MenuDetailTVC {
         let StoreDetailVC = UIStoryboard(name: "Main", bundle : nil).instantiateViewController(withIdentifier: "StoreDetailVC") as! StoreDetailVC
         
         StoreDetailVC.selectedStore = stores[indexPath.row]
-
         self.navigationController?.pushViewController(StoreDetailVC, animated: true)
         
     }

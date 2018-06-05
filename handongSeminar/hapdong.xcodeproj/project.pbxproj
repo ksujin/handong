@@ -48,6 +48,7 @@
 		3B7D8F8320C40ED6001AA464 /* RegisterReviewService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B7D8F8220C40ED6001AA464 /* RegisterReviewService.swift */; };
 		3B7D8F8520C4414F001AA464 /* Sub.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3B7D8F8420C4414F001AA464 /* Sub.storyboard */; };
 		3BB0F16620C526E00000EA18 /* Sample.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BB0F16520C526E00000EA18 /* Sample.swift */; };
+		3BB2AFF020C6B41A00B9E676 /* BookmarkBoardService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BB2AFEF20C6B41A00B9E676 /* BookmarkBoardService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -93,6 +94,7 @@
 		3B7D8F8220C40ED6001AA464 /* RegisterReviewService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterReviewService.swift; sourceTree = "<group>"; };
 		3B7D8F8420C4414F001AA464 /* Sub.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Sub.storyboard; sourceTree = "<group>"; };
 		3BB0F16520C526E00000EA18 /* Sample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sample.swift; sourceTree = "<group>"; };
+		3BB2AFEF20C6B41A00B9E676 /* BookmarkBoardService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarkBoardService.swift; sourceTree = "<group>"; };
 		604BD9E6F66A9D11002A5E0C /* Pods_hapdong.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_hapdong.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6B17B7BA831BE547D72BB4AA /* Pods-hapdong.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-hapdong.debug.xcconfig"; path = "Pods/Target Support Files/Pods-hapdong/Pods-hapdong.debug.xcconfig"; sourceTree = "<group>"; };
 		F87616411E4161B5147B1E20 /* Pods-hapdong.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-hapdong.release.xcconfig"; path = "Pods/Target Support Files/Pods-hapdong/Pods-hapdong.release.xcconfig"; sourceTree = "<group>"; };
@@ -293,6 +295,7 @@
 				3B0F5CD420C1DFD800B017C9 /* JoinService.swift */,
 				3B7D8F8220C40ED6001AA464 /* RegisterReviewService.swift */,
 				3B731F0320C453A2009085FA /* BookmarkService.swift */,
+				3BB2AFEF20C6B41A00B9E676 /* BookmarkBoardService.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -478,6 +481,7 @@
 				3B5779A220B2D41000120820 /* StoreDetailVC.swift in Sources */,
 				3B5E6AE420C18D2900DFD1FE /* APIService.swift in Sources */,
 				3B3A0D3F20B2B6B500BA6D47 /* MenuVO.swift in Sources */,
+				3BB2AFF020C6B41A00B9E676 /* BookmarkBoardService.swift in Sources */,
 				3B0F5CD720C1E00C00B017C9 /* DefaultVO.swift in Sources */,
 				3B5E6AE020C18C0100DFD1FE /* SignInVC.swift in Sources */,
 				3B5E6AF420C1BD9900DFD1FE /* LoginVO.swift in Sources */,
