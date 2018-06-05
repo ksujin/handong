@@ -14,7 +14,18 @@ class RegisterStoreTVC: UITableViewController,APIService, Gallery {
     
     var homeController: UIViewController?
     var menuCount = 0
+    var storeImageView = UIImageView()
+    var bar = UIToolbar()
+    let pickerView = UIPickerView()
+   
+    let typeList = ["한식", "피자", "치킨", "야식"]
+
+    var imageData : Data? = nil
+    var keyboardDismissGesture: UITapGestureRecognizer?
     
+    var menuLists = [[String : Any]]()
+    
+    var images : [String : Data]?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,80 +36,30 @@ class RegisterStoreTVC: UITableViewController,APIService, Gallery {
         self.tabBarController?.tabBar.isHidden = true
     }
     
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
-    // MARK: - Table view data source
-    
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 3
-    }
-    
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if section == 0 {
-            return 1
-        } else if section == 1{
-            return menuCount
-        } else {
-            return 1
-        }
-    }
-    
-    
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if indexPath.section == 0 {
-            let cell = tableView.dequeueReusableCell(withIdentifier: RegisterStoreCell1.reuseIdentifier) as! RegisterStoreCell1
-            
-            return cell
-        } else if indexPath.section == 1 {
-            let cell = tableView.dequeueReusableCell(withIdentifier: RegisterStoreCell2.reuseIdentifier) as! RegisterStoreCell2
-            return cell
-            
-            
-        } else {
-            let cell = tableView.dequeueReusableCell(withIdentifier: RegisterStoreCell3.reuseIdentifier) as! RegisterStoreCell3
-            cell.addBtn.addTarget(self, action: #selector(addTextField), for: UIControlEvents.touchUpInside)
-            cell.registerBtn.addTarget(self, action: #selector(registerStoreBtn), for: UIControlEvents.touchUpInside)
-            
-            return cell
-        }
-    }
-    
-    
-    
     @objc func addTextField(){
         menuCount += 1
         self.tableView.beginUpdates()
         self.tableView.insertRows(at: [IndexPath(row: menuCount-1, section: 1)], with : .bottom )
         self.tableView.endUpdates()
         print(menuCount)
-        
-        //  self.storeMenuTableview.reloadData()
+
     }
     
-    let pickerView = UIPickerView()
-    let typeList = ["한식", "피자", "치킨", "야식"]
     
-    
-    var imageData : Data? = nil
-    var keyboardDismissGesture: UITapGestureRecognizer?
-    
-    var menuLists = [[String : Any]]()
-    
-    var images : [String : Data]?
-    
+    //TODO
+    @objc func selectImage(_ sender: UITapGestureRecognizer) {
+        openGalleryCamera()
+    }
+
+
+    //네트워크
     @objc func registerStoreBtn() {
-        print("tap!")
-        
         for i in 0..<menuCount{
             let index = IndexPath(row: i, section: 1)
             print(index)
-            if let cell = self.tableView.cellForRow(at: index) as? RegisterStoreCell2 {
-                let name = cell.menuNameTF.text
-                let price = cell.menuPriceTF.text
+            if let cell2 = self.tableView.cellForRow(at: index) as? RegisterStoreCell2 {
+                let name = cell2.menuNameTF.text
+                let price = cell2.menuPriceTF.text
                 if (name == "" || price == "") {
                     simpleAlert(title: "err", message: "input all field")
                     return
@@ -112,19 +73,43 @@ class RegisterStoreTVC: UITableViewController,APIService, Gallery {
             
         }
         
+//        for menu in menuLists {
+//            print("tqtqt")
+//            print(menu)
+//        }
         
-        
-        for menu in menuLists {
-            print("tqtqt")
-            print(menu)
+        var storeName : String?, storeContent : String?, storeType : String!
+        let indexForCell1 = IndexPath(row: 0, section: 0)
+        if let cell1 = self.tableView.cellForRow(at: indexForCell1) as? RegisterStoreCell1 {
+             storeName = cell1.storeNameTextField.text
+             storeContent = cell1.storeExplainTextField.text
+             storeType = cell1.storeTypeTextField.text
+            if (storeName == "" || storeContent == "" || storeType == "") {
+                simpleAlert(title: "err", message: "input all field")
+                return
+            }
         }
         
+        var selectedStoreType : String = ""
+        switch storeType {
+        case "한식":
+            selectedStoreType = "101"
+        case "치킨":
+            selectedStoreType = "102"
+        case "피자":
+            selectedStoreType = "103"
+        case "야식":
+            selectedStoreType = "104"
+        default:
+            simpleAlert(title: "err", message: "select one of those category")
+            return
+        }
         
         let params : [String : Any] = [
-            "user_id" : "1",
-            "store_name" : "store",
-            "store_category" : "101",
-            "store_content" : "test"
+            "user_id" : UserDefaults.standard.string(forKey: "userId")!,
+            "store_name" : storeName ?? "",
+            "store_category" : selectedStoreType,
+            "store_content" : storeContent ?? ""
         ]
         
         let dicArr : [String : [Any]] = [
@@ -157,15 +142,52 @@ class RegisterStoreTVC: UITableViewController,APIService, Gallery {
         }
         
     }
-    
-    @objc func selectImage(_ sender: UITapGestureRecognizer) {
-        openGalleryCamera()
-    }
+
     
 }
 
+//tableview delegate & datasource
 
-
+extension RegisterStoreTVC {
+    
+    override func numberOfSections(in tableView: UITableView) -> Int {
+        
+        return 3
+    }
+    
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if section == 0 {
+            return 1
+        } else if section == 1{
+            return menuCount
+        } else {
+            return 1
+        }
+    }
+    
+    
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        if indexPath.section == 0 {
+            let cell = tableView.dequeueReusableCell(withIdentifier: RegisterStoreCell1.reuseIdentifier) as! RegisterStoreCell1
+            
+            cell.storeTypeTextField.inputView = pickerView
+            cell.storeTypeTextField.inputAccessoryView = bar
+            return cell
+        } else if indexPath.section == 1 {
+            let cell = tableView.dequeueReusableCell(withIdentifier: RegisterStoreCell2.reuseIdentifier) as! RegisterStoreCell2
+            return cell
+            
+            
+        } else {
+            let cell = tableView.dequeueReusableCell(withIdentifier: RegisterStoreCell3.reuseIdentifier) as! RegisterStoreCell3
+            cell.addBtn.addTarget(self, action: #selector(addTextField), for: UIControlEvents.touchUpInside)
+            cell.registerBtn.addTarget(self, action: #selector(registerStoreBtn), for: UIControlEvents.touchUpInside)
+            
+            
+            return cell
+        }
+    }
+}
 
 //이미지 피커 텍스트 필드에 추가
 extension RegisterStoreTVC :UIPickerViewDelegate, UIPickerViewDataSource{
@@ -173,17 +195,15 @@ extension RegisterStoreTVC :UIPickerViewDelegate, UIPickerViewDataSource{
     func initPickerView() {
         
         let barFrame = CGRect(x: 0, y: 0, width: view.frame.width, height: 40)
-        let bar = UIToolbar(frame: barFrame)
+        bar = UIToolbar(frame: barFrame)
         let btnDone = UIBarButtonItem(title: "확인", style: .done, target: self, action: #selector(selectType))
         
         let btnSpace = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: self, action: nil)
         
         bar.setItems([btnSpace, btnDone], animated: true)
-        
+
         pickerView.delegate = self
         pickerView.dataSource = self
-        //  storeTypeTextField.inputView = pickerView
-        //  storeTypeTextField.inputAccessoryView = bar
     }
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
@@ -200,7 +220,10 @@ extension RegisterStoreTVC :UIPickerViewDelegate, UIPickerViewDataSource{
     
     @objc func selectType() {
         let row = pickerView.selectedRow(inComponent: 0)
-        // storeTypeTextField.text = typeList[row]
+        let index = IndexPath(row: 0, section: 0)
+        if let cell = self.tableView.cellForRow(at: index) as? RegisterStoreCell1 {
+            cell.storeTypeTextField.text = typeList[row]
+        }
         view.endEditing(true)
     }
 }
@@ -228,10 +251,10 @@ extension RegisterStoreTVC: UIImagePickerControllerDelegate,UINavigationControll
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any])
     {
         if let editedImage: UIImage = info[UIImagePickerControllerEditedImage] as? UIImage {
-            //  storeImageView.image = editedImage
+          //  storeImageView.image = editedImage
             imageData = UIImageJPEGRepresentation(editedImage, 0.1)
         } else if let originalImage: UIImage = info[UIImagePickerControllerOriginalImage] as? UIImage{
-            //  storeImageView.image = originalImage
+          //  storeImageView.image = originalImage
             imageData = UIImageJPEGRepresentation(originalImage, 0.1)
         }
         self.dismiss(animated: true) {
