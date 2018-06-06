@@ -45,12 +45,15 @@ class RegisterStoreTVC: UITableViewController,APIService, Gallery {
 
     }
     
-    
-    //TODO
-    @objc func selectImage(_ sender: UITapGestureRecognizer) {
+    @IBAction func imgBtn(_ sender: UITapGestureRecognizer) {
         openGalleryCamera()
     }
-
+    
+    //TODO
+//    @objc func selectImage(_ sender: UITapGestureRecognizer) {
+//        openGalleryCamera()
+//    }
+//
 
     //네트워크
     @objc func registerStoreBtn() {
@@ -250,11 +253,13 @@ extension RegisterStoreTVC: UIImagePickerControllerDelegate,UINavigationControll
 {
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any])
     {
+        let indexForCell1 = IndexPath(row: 0, section: 0)
+        guard let cell1 = self.tableView.cellForRow(at: indexForCell1) as? RegisterStoreCell1 else { return }
         if let editedImage: UIImage = info[UIImagePickerControllerEditedImage] as? UIImage {
-          //  storeImageView.image = editedImage
+            cell1.storeImageView.image = editedImage
             imageData = UIImageJPEGRepresentation(editedImage, 0.1)
         } else if let originalImage: UIImage = info[UIImagePickerControllerOriginalImage] as? UIImage{
-          //  storeImageView.image = originalImage
+             cell1.storeImageView.image = originalImage
             imageData = UIImageJPEGRepresentation(originalImage, 0.1)
         }
         self.dismiss(animated: true) {

@@ -416,7 +416,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="4149.6000000000004" y="1996.5517241379312"/>
+            <point key="canvasLocation" x="2034" y="1548"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="FOu-gc-d9l">
@@ -756,11 +756,15 @@
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <textInputTraits key="textInputTraits"/>
                                         </textField>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="2Sw-Qh-QTc">
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pizza" translatesAutoresizingMaskIntoConstraints="NO" id="2Sw-Qh-QTc">
                                             <rect key="frame" x="44" y="269" width="281" height="128"/>
+                                            <gestureRecognizers/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="128" id="fTa-rd-GU4"/>
                                             </constraints>
+                                            <connections>
+                                                <outletCollection property="gestureRecognizers" destination="Ka7-aE-379" appends="YES" id="vbv-bh-g3n"/>
+                                            </connections>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="가게이름" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rm7-sL-aUD">
                                             <rect key="frame" x="44" y="96" width="59" height="21"/>
@@ -883,6 +887,11 @@
                     </tableView>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dpH-9n-sJk" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="Ka7-aE-379">
+                    <connections>
+                        <action selector="imgBtn:" destination="wK2-AL-ccS" id="ekI-Pb-9Kt"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="3329" y="833"/>
         </scene>

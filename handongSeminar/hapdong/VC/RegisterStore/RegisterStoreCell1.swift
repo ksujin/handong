@@ -20,6 +20,7 @@ class RegisterStoreCell1 : UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        storeImageView.isUserInteractionEnabled = true
     }
     
     override func setSelected(_ selected: Bool, animated: Bool) {

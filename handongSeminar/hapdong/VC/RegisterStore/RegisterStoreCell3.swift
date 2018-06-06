@@ -18,6 +18,7 @@ class RegisterStoreCell3: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        
         // Initialization code
     }
     
