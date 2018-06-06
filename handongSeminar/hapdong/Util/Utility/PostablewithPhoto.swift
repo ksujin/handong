@@ -66,7 +66,7 @@ extension PostablewithPhoto {
             (encodingResult) in
             switch encodingResult {
             case .success(let upload,_,_):
-                print("a")
+               
                 upload.responseData(completionHandler: { (res) in
                     switch res.result{
                     case .success:
@@ -93,7 +93,7 @@ extension PostablewithPhoto {
                 })
                 break
             case .failure(let err):
-                print("must be here")
+             
                 print(err.localizedDescription)
                 break
             }

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ThirdViewController: UIViewController {
+class ThirdViewController: UIViewController, APIService {
 
     @IBOutlet weak var thirdTableView: UITableView!
     var selectedStore:Store!
@@ -19,16 +19,43 @@ class ThirdViewController: UIViewController {
         registerReviewVC.storeIdx = selectedStoreIdx
         self.navigationController?.pushViewController(registerReviewVC, animated: true)
     }
-    var reviews : [ReviewVO] = []
+    var reviews : [Review] = []
+    
+    override func viewWillAppear(_ animated: Bool) {
+         reviewBoardInit(url: url("/store/review/\(selectedStore.storeIdx)"))
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //thirdTableView.tableFooterView = UIView(frame: .zero)
+        thirdTableView.tableFooterView = UIView(frame: .zero)
         thirdTableView.delegate = self
         thirdTableView.dataSource = self
-        // Do any additional setup after loading the view.
+        
+        reviewBoardInit(url: url("/store/review/\(selectedStore.storeIdx)"))
     }
-    
+    func reviewBoardInit(url : String){
+       
+        ReviewGetService.shareInstance.reviewInit(url: url, completion: { [weak self] (result) in
+            guard let `self` = self else { return }
+            
+            switch result {
+            case .networkSuccess(let ReviewGetData):
+               
+                print(ReviewGetData)
+                self.reviews = ReviewGetData as! [Review]
+                self.thirdTableView.reloadData()
+                break
+                
+            case .networkFail :
+                self.simpleAlert(title: "network", message: "check")
+            default :
+                break
+            }
+            
+        })
+        
+    }
     
 }
 
@@ -40,6 +67,7 @@ extension ThirdViewController :UITableViewDelegate, UITableViewDataSource{
     
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
         let cell = tableView.dequeueReusableCell(withIdentifier: ThirdTableViewCell.reuseIdentifier) as! ThirdTableViewCell
         
         cell.configure(review: reviews[indexPath.row])

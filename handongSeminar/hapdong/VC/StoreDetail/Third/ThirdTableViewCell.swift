@@ -17,10 +17,15 @@ class ThirdTableViewCell: UITableViewCell {
     
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var writerLabel: UILabel!
-    func configure(review : ReviewVO){
-        writerLabel.text =  review.reviewWriter
-        dateLabel.text = review.date
-        imageView11.image = UIImage(named : review.image)
+    func configure(review : Review){
+        writerLabel.text =  review.userId
+        dateLabel.text = review.reviewTime
+        
+        if let url = URL(string: gsno(review.reviewPhoto)){
+            self.imageView11.kf.setImage(with: url)
+        } else {
+            self.imageView11.image = #imageLiteral(resourceName: "account")
+        }
         contentLabel.text = review.reviewContent
         
     }

@@ -16,7 +16,7 @@ class MenuDetailTVC: UITableViewController, APIService {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.tableView.tableFooterView = UIView(frame: .zero)
-        print("aaa")
+        
         addRightBarButton(image: #imageLiteral(resourceName: "add"), selector: #selector(self.goToAddStoreView))
         
         switch selectedCategory {

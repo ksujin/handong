@@ -342,7 +342,7 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="roast-chicken" translatesAutoresizingMaskIntoConstraints="NO" id="hXO-jl-y6s">
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="SelectImgDefault" translatesAutoresizingMaskIntoConstraints="NO" id="hXO-jl-y6s">
                                                 <rect key="frame" x="30" y="342" width="315" height="128"/>
                                                 <gestureRecognizers/>
                                                 <constraints>
@@ -756,7 +756,7 @@
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <textInputTraits key="textInputTraits"/>
                                         </textField>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pizza" translatesAutoresizingMaskIntoConstraints="NO" id="2Sw-Qh-QTc">
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="SelectImgDefault" translatesAutoresizingMaskIntoConstraints="NO" id="2Sw-Qh-QTc">
                                             <rect key="frame" x="44" y="269" width="281" height="128"/>
                                             <gestureRecognizers/>
                                             <constraints>
@@ -897,6 +897,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="SelectImgDefault" width="224" height="127"/>
         <image name="ketchup" width="128" height="128"/>
         <image name="nigiri" width="128" height="128"/>
         <image name="pizza" width="128" height="128"/>

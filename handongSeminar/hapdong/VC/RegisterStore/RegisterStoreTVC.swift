@@ -41,7 +41,7 @@ class RegisterStoreTVC: UITableViewController,APIService, Gallery {
         self.tableView.beginUpdates()
         self.tableView.insertRows(at: [IndexPath(row: menuCount-1, section: 1)], with : .bottom )
         self.tableView.endUpdates()
-        print(menuCount)
+        
 
     }
     
@@ -59,7 +59,7 @@ class RegisterStoreTVC: UITableViewController,APIService, Gallery {
     @objc func registerStoreBtn() {
         for i in 0..<menuCount{
             let index = IndexPath(row: i, section: 1)
-            print(index)
+           
             if let cell2 = self.tableView.cellForRow(at: index) as? RegisterStoreCell2 {
                 let name = cell2.menuNameTF.text
                 let price = cell2.menuPriceTF.text
@@ -75,11 +75,7 @@ class RegisterStoreTVC: UITableViewController,APIService, Gallery {
             }
             
         }
-        
-//        for menu in menuLists {
-//            print("tqtqt")
-//            print(menu)
-//        }
+
         
         var storeName : String?, storeContent : String?, storeType : String!
         let indexForCell1 = IndexPath(row: 0, section: 0)

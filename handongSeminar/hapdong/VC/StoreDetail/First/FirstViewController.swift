@@ -8,23 +8,51 @@
 
 import UIKit
 
-class FirstViewController: UIViewController {
+class FirstViewController: UIViewController, APIService {
 
     
     @IBOutlet weak var firstTableView: UITableView!
-    var menues : [MenuVO] = []
+    var menues : [Menu] = []
     var selectedStore:Store!
+    
+    
+    override func viewWillAppear(_ animated: Bool) {
+          menuBoardInit(url: url("/store/menu/\(selectedStore.storeIdx)"))
+    }
     override func viewDidLoad() {
+        
         super.viewDidLoad()
-        print(selectedStore.storeIdx)
-       // firstTableView.tableFooterView = UIView(frame: .zero)
+   
+        firstTableView.tableFooterView = UIView(frame: .zero)
         firstTableView.delegate = self
         firstTableView.dataSource = self
-        // Do any additional setup after loading the view.
+        
+        menuBoardInit(url: url("/store/menu/\(selectedStore.storeIdx)"))
     }
-
-
+    
+    func menuBoardInit(url : String){
+        MenuService.shareInstance.menuInit(url: url, completion: { [weak self] (result) in
+            guard let `self` = self else { return }
+            
+            switch result {
+            case .networkSuccess(let menudata):
+                self.menues = menudata as! [Menu]
+                self.firstTableView.reloadData()
+                break
+                
+            case .networkFail :
+                self.simpleAlert(title: "network", message: "check")
+             
+            default :
+                break
+            }
+            
+            }, store: selectedStore.storeIdx )
+        
+    }
+    
 }
+
 
 extension FirstViewController :UITableViewDelegate, UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

@@ -80,46 +80,63 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gFf-zO-Ee5">
-                                <rect key="frame" x="16" y="68" width="240" height="128"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="gFf-zO-Ee5">
+                                <rect key="frame" x="16" y="68" width="343" height="155"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="343" id="KKX-eu-4cd"/>
+                                    <constraint firstAttribute="height" constant="155" id="ucK-hI-pEw"/>
+                                </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="최근리뷰" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ypx-L0-LN0">
-                                <rect key="frame" x="289" y="107" width="59" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="최근리뷰" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ypx-L0-LN0">
+                                <rect key="frame" x="36" y="257" width="59" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="가게 설명" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zoh-gP-4JU">
-                                <rect key="frame" x="43" y="260" width="64" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y1F-fz-6Io">
+                                <rect key="frame" x="36" y="373" width="323" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y1F-fz-6Io">
-                                <rect key="frame" x="43" y="323" width="42" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="54" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Uy-Y3-xbY">
+                                <rect key="frame" x="215" y="257" width="21" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="54" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Uy-Y3-xbY">
-                                <rect key="frame" x="289" y="175" width="21" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="가게 설명" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zoh-gP-4JU">
+                                <rect key="frame" x="36" y="323" width="64" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="y1F-fz-6Io" firstAttribute="trailing" secondItem="gFf-zO-Ee5" secondAttribute="trailing" id="AKT-1Z-oSd"/>
+                            <constraint firstItem="Ypx-L0-LN0" firstAttribute="top" secondItem="gFf-zO-Ee5" secondAttribute="bottom" constant="34" id="Mi0-Vz-AJ5"/>
+                            <constraint firstItem="4Uy-Y3-xbY" firstAttribute="leading" secondItem="Ypx-L0-LN0" secondAttribute="trailing" constant="120" id="NDj-DV-Pvc"/>
+                            <constraint firstItem="Zoh-gP-4JU" firstAttribute="top" secondItem="Ypx-L0-LN0" secondAttribute="bottom" constant="45" id="Rgh-3i-AUb"/>
+                            <constraint firstItem="4Uy-Y3-xbY" firstAttribute="centerY" secondItem="Ypx-L0-LN0" secondAttribute="centerY" id="Sp0-ak-Z5B"/>
+                            <constraint firstItem="gFf-zO-Ee5" firstAttribute="centerX" secondItem="PE1-aq-KeD" secondAttribute="centerX" id="XDB-ab-E6g"/>
+                            <constraint firstItem="y1F-fz-6Io" firstAttribute="top" secondItem="Zoh-gP-4JU" secondAttribute="bottom" constant="29" id="XMs-f9-YEN"/>
+                            <constraint firstItem="gFf-zO-Ee5" firstAttribute="top" secondItem="PE1-aq-KeD" secondAttribute="top" constant="48" id="eG1-DF-tKg"/>
+                            <constraint firstItem="Zoh-gP-4JU" firstAttribute="leading" secondItem="Ypx-L0-LN0" secondAttribute="leading" id="eZC-zL-7bJ"/>
+                            <constraint firstItem="y1F-fz-6Io" firstAttribute="leading" secondItem="Zoh-gP-4JU" secondAttribute="leading" id="h3J-Oq-r63"/>
+                            <constraint firstItem="Ypx-L0-LN0" firstAttribute="leading" secondItem="gFf-zO-Ee5" secondAttribute="leading" constant="20" id="t5w-bc-wGf"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="PE1-aq-KeD"/>
                     </view>
+                    <connections>
+                        <outlet property="infoImageVeiw" destination="gFf-zO-Ee5" id="tFv-tF-Ksu"/>
+                        <outlet property="infoReviewNumLabel" destination="4Uy-Y3-xbY" id="XOL-QY-690"/>
+                        <outlet property="infoStoreExLabel" destination="y1F-fz-6Io" id="hZT-vG-Ojv"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VXx-N6-4hW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3369" y="1243"/>
+            <point key="canvasLocation" x="3368.8000000000002" y="1242.7286356821589"/>
         </scene>
         <!--Third View Controller-->
         <scene sceneID="K3f-KZ-xAb">
@@ -129,7 +146,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Ipn-53-aFX" customClass="Third">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Ipn-53-aFX">
                                 <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <view key="tableHeaderView" contentMode="scaleToFill" id="0Ii-T4-J4S">

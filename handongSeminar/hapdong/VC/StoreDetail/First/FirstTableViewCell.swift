@@ -15,9 +15,9 @@ class FirstTableViewCell: UITableViewCell {
     @IBOutlet weak var priceLabel: UILabel!
     
     
-    func configure(menu : MenuVO){
+    func configure(menu : Menu){
         menuNameLabel.text =  menu.menuName
-        priceLabel.text = String(menu.price)
+        priceLabel.text = String(menu.menuPrice)
         
     }
    
