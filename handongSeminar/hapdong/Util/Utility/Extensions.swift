@@ -149,4 +149,47 @@ extension UIBarButtonItem {
     }
 }
 
+extension Collection where Iterator.Element == [String:AnyObject] {
+    func toJSONString(options: JSONSerialization.WritingOptions = .prettyPrinted) -> String {
+        if let arr = self as? [[String:Any]],
+            let dat = try? JSONSerialization.data(withJSONObject: arr, options: options),
+            let str = String(data: dat, encoding: String.Encoding.utf8) {
+            return str
+        }
+        return "[]"
+    }
+    
+    func toJSONData() -> Data {
+        if let arr = self as? [[String:Any]],
+            let dat = try? JSONSerialization.data(withJSONObject: arr)
+             {
+            return dat
+        }
+        return Data()
+    }
+}
+
+/* let arrayOfDictionaries = [
+ { "abc": 123, "def": "ggg", "xyz": true },
+ { "abc": 456, "def": "hhh", "xyz": false },
+ { "abc": 789, "def": "jjj", "xyz": true }
+ ]
+ 
+ print(arrayOfDictionaries.toJSONString())
+ 
+ 
+ [
+ {
+ "abc" : 123,
+ "def" : "ggg",
+ "xyz" : true
+ },
+ {
+ "abc" : 456,
+ "def" : "hhh",
+ "xyz" : false
+ }
+ ]
+ */
+
 

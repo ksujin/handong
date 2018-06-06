@@ -14,7 +14,7 @@ protocol PostablewithPhoto {
     associatedtype NetworkData : Codable
     func savePhotoContent(_ URL:String, params : [String : Any], imageData : [String : Data]?, completion : @escaping (Result<NetworkData>)->Void)
     
-    func savePhotowithArray(_ URL:String, params : [String : Any], dicArr: [String : Array<Any>], imageData : [String : Data]?, completion : @escaping (Result<NetworkData>)->Void)
+    func savePhotowithArray(_ URL:String, params : [String : Any], dicArr: [String : [[String : Any]]], imageData : [String : Data]?, completion : @escaping (Result<NetworkData>)->Void)
 }
 
 extension PostablewithPhoto {
@@ -23,7 +23,8 @@ extension PostablewithPhoto {
         return value ?? 0
     }
     
-    func savePhotowithArray(_ URL:String, params : [String : Any], dicArr: [String : Array<Any>], imageData : [String : Data]?, completion : @escaping (Result<NetworkData>)->Void){
+    //Array<Any>
+    func savePhotowithArray(_ URL:String, params : [String : Any], dicArr: [String : [[String : Any]]], imageData : [String : Data]?, completion : @escaping (Result<NetworkData>)->Void){
         Alamofire.upload(multipartFormData: { multipartFormData in
             
             for (x,y) in params {
@@ -36,9 +37,22 @@ extension PostablewithPhoto {
             }
             
             for (x,y) in dicArr {
-                let data = try! JSONSerialization.data(withJSONObject: y, options: .prettyPrinted)
-                print(JSON(data))
-                multipartFormData.append(data , withName: x)
+               
+                do {
+                   
+                    let data = try JSONSerialization.data(withJSONObject: y)
+                    multipartFormData.append(data as Data , withName: x)
+                    print(JSON(data))
+
+                } catch {
+                    print("err")
+                }
+
+           
+                
+                
+          
+        
             }
             
             if let images_ = imageData {

@@ -115,7 +115,7 @@ class RegisterStoreTVC: UITableViewController,APIService, Gallery {
             "store_content" : storeContent ?? ""
         ]
         
-        let dicArr : [String : [Any]] = [
+        let dicArr : [String : [[String : Any]]] = [
             "menu_list" : menuLists
         ]
         
@@ -136,6 +136,8 @@ class RegisterStoreTVC: UITableViewController,APIService, Gallery {
                 })
             case .nullValue :
                 self.simpleAlert(title: "오류", message: "비어있음")
+            case .serverErr :
+                self.simpleAlert(title: "오류", message: "서버 에러!")
             case .networkFail :
                 self.simpleAlert(title: "오류", message: "인터넷 연결상태를 확인해주세요")
             default :

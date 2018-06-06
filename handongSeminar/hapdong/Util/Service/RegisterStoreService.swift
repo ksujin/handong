@@ -13,7 +13,7 @@ struct RegisterStoreService: PostablewithPhoto {
     
     typealias NetworkData = DefaultVO
     static let shareInstance = RegisterStoreService()
-    func registerStore(url : String, params : [String : Any], dicArr : [String : [Any]], image : [String : Data]?, completion : @escaping (NetworkResult<Any>) -> Void){
+    func registerStore(url : String, params : [String : Any], dicArr : [String : [[String : Any]]], image : [String : Data]?, completion : @escaping (NetworkResult<Any>) -> Void){
         
         savePhotowithArray(url, params: params, dicArr : dicArr, imageData: image) { (result) in
             switch result {
@@ -25,7 +25,7 @@ struct RegisterStoreService: PostablewithPhoto {
                 case "400 error" :
                     print("why")
                     completion(.nullValue)
-                case "Interanal Server Error!" :
+                case "Internal Server Error!" :
                     completion(.serverErr)
                 default :
                     break
