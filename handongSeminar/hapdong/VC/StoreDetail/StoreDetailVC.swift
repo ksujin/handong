@@ -150,6 +150,7 @@ class StoreDetailVC: UIViewController, APIService {
         var viewController = storyboard.instantiateViewController(withIdentifier: "FirstViewController") as! FirstViewController
         /// viewController.menues = selectedStore.storeMenu
         // Add View Controller as Child View Controller
+        viewController.selectedStore = self.selectedStore
         self.add(asChildViewController: viewController)
         
         return viewController
@@ -161,7 +162,7 @@ class StoreDetailVC: UIViewController, APIService {
         
         // Instantiate View Controller
         var viewController = storyboard.instantiateViewController(withIdentifier: "SecondViewController") as! SecondViewController
-        
+        viewController.selectedStore = self.selectedStore
         // Add View Controller as Child View Controller
         self.add(asChildViewController: viewController)
         
@@ -176,6 +177,7 @@ class StoreDetailVC: UIViewController, APIService {
         var viewController = storyboard.instantiateViewController(withIdentifier: "ThirdViewController") as! ThirdViewController
         // viewController.reviews = selectedStore.reviews
         // Add View Controller as Child View Controller
+        viewController.selectedStore = self.selectedStore
         self.add(asChildViewController: viewController)
         
         return viewController

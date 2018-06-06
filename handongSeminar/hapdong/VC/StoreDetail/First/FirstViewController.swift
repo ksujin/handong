@@ -12,10 +12,11 @@ class FirstViewController: UIViewController {
 
     
     @IBOutlet weak var firstTableView: UITableView!
-     var menues : [MenuVO] = []
+    var menues : [MenuVO] = []
+    var selectedStore:Store!
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        print(selectedStore.storeIdx)
        // firstTableView.tableFooterView = UIView(frame: .zero)
         firstTableView.delegate = self
         firstTableView.dataSource = self

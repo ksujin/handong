@@ -10,6 +10,7 @@ import UIKit
 
 class SecondViewController: UIViewController {
 
+    var selectedStore:Store!
     override func viewDidLoad() {
         super.viewDidLoad()
 

@@ -11,7 +11,7 @@ import UIKit
 class ThirdViewController: UIViewController {
 
     @IBOutlet weak var thirdTableView: UITableView!
-    
+    var selectedStore:Store!
     @IBAction func registerReviewBtn(_ sender: Any) {
         let parentVC = self.parent as! StoreDetailVC
         let selectedStoreIdx = parentVC.selectedStore.storeIdx
