@@ -67,6 +67,16 @@ class RegisterStoreTVC: UITableViewController,APIService, Gallery {
                     simpleAlert(title: "err", message: "input all field")
                     return
                 }
+            }
+            
+        }
+        
+        for i in 0..<menuCount{
+            let index = IndexPath(row: i, section: 1)
+            
+            if let cell2 = self.tableView.cellForRow(at: index) as? RegisterStoreCell2 {
+                let name = cell2.menuNameTF.text
+                let price = cell2.menuPriceTF.text
                 let menu = [
                     "menu_name" : name!,
                     "menu_price" : price!
