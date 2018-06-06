@@ -24,7 +24,7 @@ class ThirdTableViewCell: UITableViewCell {
         if let url = URL(string: gsno(review.reviewPhoto)){
             self.imageView11.kf.setImage(with: url)
         } else {
-            self.imageView11.image = #imageLiteral(resourceName: "account")
+            self.imageView11.image = #imageLiteral(resourceName: "consulting-message")
         }
         contentLabel.text = review.reviewContent
         

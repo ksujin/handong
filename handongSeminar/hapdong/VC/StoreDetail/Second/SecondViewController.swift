@@ -42,7 +42,7 @@ class SecondViewController: UIViewController, APIService {
                 if let url = URL(string: self.gsno(selectedInfo.storePhoto)){
                     self.infoImageVeiw.kf.setImage(with: url)
                 } else {
-                    self.infoImageVeiw.image = #imageLiteral(resourceName: "account")
+                    self.infoImageVeiw.image = #imageLiteral(resourceName: "grocery")
                 }
                 
                 break

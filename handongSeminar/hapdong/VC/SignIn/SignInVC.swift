@@ -69,7 +69,14 @@ class SignInVC: UIViewController, APIService {
         }
         
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        self.navigationController?.navigationBar.isHidden = true
+        self.pwdTxt.text = ""
+        self.idTxt.text = ""
+    }
     override func viewDidLoad() {
+        self.pwdTxt.isSecureTextEntry = true
         super.viewDidLoad()
         
     }

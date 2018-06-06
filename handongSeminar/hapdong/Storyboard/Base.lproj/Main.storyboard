@@ -181,7 +181,7 @@
         <scene sceneID="YO6-K4-NsT">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Ghi-s2-Wix" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="home" id="gji-Lv-fVa"/>
+                    <tabBarItem key="tabBarItem" title="home" image="home-1" id="gji-Lv-fVa"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="jKG-iT-mgI">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
@@ -203,8 +203,9 @@
         <!--bookMark-->
         <scene sceneID="XtU-RH-COQ">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="IRt-9g-001" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="IVy-uq-Rob" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="bookMark" id="kSE-hO-cs1"/>
+                    <tabBarItem key="tabBarItem" title="bookMark" image="bookmark-black-shape" id="kSE-hO-cs1"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="4Q0-HJ-sX6">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
@@ -216,7 +217,6 @@
                         <segue destination="HOs-Z9-gmw" kind="relationship" relationship="rootViewController" id="RIF-LX-pmV"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="IRt-9g-001" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="308" y="1548"/>
         </scene>
@@ -445,7 +445,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="star" translatesAutoresizingMaskIntoConstraints="NO" id="icv-sC-PN3">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="BM" translatesAutoresizingMaskIntoConstraints="NO" id="icv-sC-PN3">
                                 <rect key="frame" x="75.5" y="176.5" width="224" height="75.5"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="icv-sC-PN3" secondAttribute="height" multiplier="217:73" id="uBm-ae-fej"/>
@@ -483,7 +483,7 @@
                                     <action selector="joinBtnAction:" destination="6lj-tD-m5G" eventType="touchUpInside" id="89e-BX-fI9"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="star" translatesAutoresizingMaskIntoConstraints="NO" id="c6R-tg-Oae">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="BM" translatesAutoresizingMaskIntoConstraints="NO" id="c6R-tg-Oae">
                                 <rect key="frame" x="130" y="569" width="114" height="59.5"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="c6R-tg-Oae" secondAttribute="height" multiplier="212:111" id="O5P-wz-eeu"/>
@@ -531,7 +531,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="star" translatesAutoresizingMaskIntoConstraints="NO" id="NgG-BJ-tVr">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="BM" translatesAutoresizingMaskIntoConstraints="NO" id="NgG-BJ-tVr">
                                 <rect key="frame" x="75.5" y="154.5" width="224" height="75.5"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="NgG-BJ-tVr" secondAttribute="height" multiplier="217:73" id="Eys-bW-WB1"/>
@@ -897,7 +897,10 @@
         </scene>
     </scenes>
     <resources>
+        <image name="BM" width="1321" height="397"/>
         <image name="SelectImgDefault" width="224" height="127"/>
+        <image name="bookmark-black-shape" width="24" height="24"/>
+        <image name="home-1" width="24" height="24"/>
         <image name="ketchup" width="128" height="128"/>
         <image name="nigiri" width="128" height="128"/>
         <image name="pizza" width="128" height="128"/>

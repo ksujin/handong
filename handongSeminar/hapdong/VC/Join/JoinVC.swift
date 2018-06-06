@@ -20,10 +20,17 @@ class JoinVC: UIViewController , APIService {
     let userId : String = "user_id"
     let userPwd : String = "user_pw"
     
+    override func viewWillAppear(_ animated: Bool) {
+        self.navigationController?.navigationBar.isHidden = false
+        self.pwdTxt.text = ""
+        self.idTxt.text = ""
+    }
     override func viewDidLoad() {
-        
+        self.pwdTxt.isSecureTextEntry = true
         super.viewDidLoad()
      
+        
+        
         joinBtn.addTarget(self, action: #selector(joinBtnClick(_:)), for: UIControlEvents.touchUpInside)
         
         pwdTxt.addTarget(self, action: #selector(isValid), for: .editingChanged)
