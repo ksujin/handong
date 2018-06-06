@@ -38,6 +38,9 @@ class MenuDetailTVC: UITableViewController, APIService {
     
     override func viewWillAppear(_ animated: Bool) {
         self.storeBoardInit(url:  url("/store/list"))
+      
+        self.tabBarController?.tabBar.isHidden = false
+
         
     }
     

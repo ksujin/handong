@@ -62,13 +62,17 @@ class RegisterReviewVC: UIViewController, Gallery, APIService {
         
         openGalleryCamera()
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+         self.tabBarController?.tabBar.isHidden = true
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
         homeController = self
         storeImageView.isUserInteractionEnabled = true
         reviewExplainTextView.delegate = self
-        self.tabBarController?.tabBar.isHidden = true
+       
 
     }
     

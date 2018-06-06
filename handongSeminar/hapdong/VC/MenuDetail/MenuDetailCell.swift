@@ -29,7 +29,7 @@ class MenuDetailCell: UITableViewCell {
         if let url = URL(string: gsno(store.storePhoto)){
             self.storeImageView.kf.setImage(with: url)
         } else {
-            self.storeImageView.image = #imageLiteral(resourceName: "star")
+            self.storeImageView.image = #imageLiteral(resourceName: "grocery")
         }
         
        /* let storeIdx: Int

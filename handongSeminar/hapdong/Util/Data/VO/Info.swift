@@ -15,7 +15,7 @@ struct InfoData: Codable {
 }
 
 struct Info: Codable {
-    let storePhoto: String
+    let storePhoto: String?
     let storeContent : String
     let reviewCount : Int
     
